@@ -18,7 +18,8 @@
 ;(package! some-package)
 
 ;; For ivy-bibtex
-(package! ivy-bibtex)
+;;(package! ivy-bibtex)
+(package! helm-bibtex)
 
 
 ;; This was the list from LSP -> but it's already included in Doom

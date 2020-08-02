@@ -56,13 +56,11 @@
 (setq bibtex-completion-cite-prompt-for-optional-arguments nil)
 
 ;; Ivy config, see https://github.com/tmalsburg/helm-bibtex
-(setq ivy-re-builders-alist
-      '((ivy-bibtex . ivy--regex-ignore-order)
-        (t . ivy--regex-plus)))
-;;(setq ivy-set-actions
-;;    'ivy-bibtex
-;;    '( () ))
+;;(setq ivy-re-builders-alist
+;;      '((ivy-bibtex . ivy--regex-ignore-order)
+;;        (t . ivy--regex-plus)))
 
+;; Config opttions for bibtext completion via helm/ivy
 (setq bibtex-completion-bibliography
       '("/home/fynn/Desktop/Master/Bayesian_Glucose/LaTeX/bibliography/literature.bib"))
 (setq bibtex-completion-library-path '("/home/fynn/Nextcloud/Docs/papers"))
