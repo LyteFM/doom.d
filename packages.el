@@ -21,6 +21,9 @@
 ;;(package! ivy-bibtex)
 (package! helm-bibtex)
 
+;;(package! org-utf-to-xetex
+;;  :recipe (:host github :repo "grettke/org-utf-to-xetex"))
+
 
 ;; This was the list from LSP -> but it's already included in Doom
 ;;(package! lsp-mode)

@@ -51,8 +51,44 @@
 	   ;; (setq TeX-show-compilation t)
 	    (setq TeX-parse-self t) ; Enable parse on load.
 	    (setq TeX-auto-save t) ; Enable parse on save.
-	  )
-          )
+      ))
+
+;; Org-mode config
+
+;;(require 'org-utf-to-xetex)
+;;(add-hook 'org-mode-hook #'org-utf-to-xetex-prettify)
+
+(with-eval-after-load 'ox-latex
+  ;; won't use xelatex :(
+  ;;(setq org-latex-compiler "xelatex")
+  ;;(setq org-latex-pdf-process '("xelatex -interaction nonstopmode -quiet -output-directory %o %f"))
+  ;;(add-to-list 'org-latex-packages-alist '("" "fontspec"))
+  ;;(add-to-list 'org-latex-packages-alist '("" "unicode-math-xetex"))
+
+
+  (setq org-latex-default-packages-alist '(
+    ;;("mathletters" "ucs" t ("pdflatex"))
+    ("T1" "fontenc" t ("pdflatex"))
+    ("utf8" "inputenc" t ("pdflatex"))
+    ("" "graphicx" t)
+    ("" "grffile" t)
+    ("" "longtable" nil)
+    ("" "wrapfig" nil)
+    ("" "rotating" nil)
+    ("normalem" "ulem" t)
+    ("" "amsmath" t)
+    ("" "textcomp" t)
+    ("" "amssymb" t)
+    ("" "capt-of" nil)
+    ("" "hyperref" nil))
+  )
+  
+  (add-to-list 'org-latex-packages-alist '("greek" "babel"))
+  ;;(add-to-list 'org-latex-packages-alist '("" "textalpha"))
+  (add-to-list 'org-latex-packages-alist '("" "alphabeta"))
+)
+
+
 (setq bibtex-completion-cite-prompt-for-optional-arguments nil)
 
 ;; Ivy config, see https://github.com/tmalsburg/helm-bibtex
@@ -68,10 +104,6 @@
 (setq bibtex-completion-pdf-open-function
   (lambda (fpath)
     (call-process "evince" nil 0 nil fpath)))
-
-;; lsp-server
-;;(setq read-process-output-max (* 1024 1024)) ;; 1mb
-;;(setq lsp-completion-provider :capf)
 
 
 ;; Here are some additional functions/macros that could help you configure Doom:
