@@ -59,17 +59,10 @@
 ;;(add-hook 'org-mode-hook #'org-utf-to-xetex-prettify)
 
 (with-eval-after-load 'ox-latex
-  ;; won't use xelatex :(
-  ;;(setq org-latex-compiler "xelatex")
-  ;;(setq org-latex-pdf-process '("xelatex -interaction nonstopmode -quiet -output-directory %o %f"))
-  ;;(add-to-list 'org-latex-packages-alist '("" "fontspec"))
-  ;;(add-to-list 'org-latex-packages-alist '("" "unicode-math-xetex"))
-
-
   (setq org-latex-default-packages-alist '(
-    ;;("mathletters" "ucs" t ("pdflatex"))
+    ("mathletters" "ucs" t ("pdflatex")) ;; added 
     ("T1" "fontenc" t ("pdflatex"))
-    ("utf8" "inputenc" t ("pdflatex"))
+    ("utf8x" "inputenc" t ("pdflatex")) ;; modified to utf8x
     ("" "graphicx" t)
     ("" "grffile" t)
     ("" "longtable" nil)
@@ -82,10 +75,6 @@
     ("" "capt-of" nil)
     ("" "hyperref" nil))
   )
-  
-  (add-to-list 'org-latex-packages-alist '("greek" "babel"))
-  ;;(add-to-list 'org-latex-packages-alist '("" "textalpha"))
-  (add-to-list 'org-latex-packages-alist '("" "alphabeta"))
 )
 
 
