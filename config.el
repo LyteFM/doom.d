@@ -38,6 +38,9 @@
 ;; projectile will search for directories in these folders:
 ;;(setq projectile-project-search-path '("~/Desktop/Pf"))
 
+;; Own keybindings
+(map! :ne "SPC l v" #'org-latex-preview)
+
 
 ;; AUCTeX config
 (add-hook 'LaTeX-mode-hook
@@ -55,9 +58,7 @@
 
 ;; Org-mode config
 
-;;(require 'org-utf-to-xetex)
-;;(add-hook 'org-mode-hook #'org-utf-to-xetex-prettify)
-
+;; Override defaults to
 (with-eval-after-load 'ox-latex
   (setq org-latex-default-packages-alist '(
     ("mathletters" "ucs" t ("pdflatex")) ;; added 
