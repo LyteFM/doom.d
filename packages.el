@@ -17,26 +17,6 @@
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;(package! some-package)
 
-;; For ivy-bibtex
-;;(package! ivy-bibtex)
-(package! helm-bibtex)
-
-;;(package! org-utf-to-xetex
-;;  :recipe (:host github :repo "grettke/org-utf-to-xetex"))
-
-
-;; This was the list from LSP -> but it's already included in Doom
-;;(package! lsp-mode)
-;;(package! lsp-ui)
-;;(package! lsp-treemacs) ;; wasn't included!
-;;(package! company-lsp)  ;; wasn't included!
-;;(package! ccls)  ;; wasn't included!
-;;(package! helm-lsp) ;; if/when I use helm
-;;(package! dap-mode) ;; debugger - nah I have Chrome/FF
-;;(package! yasnippet)
-;;(package! typescript-mode)
-
-
 ;; To install a package directly from a particular repo, you'll need to specify
 ;; a `:recipe'. You'll find documentation on what `:recipe' accepts here:
 ;; https://github.com/raxod502/straight.el#the-recipe-format

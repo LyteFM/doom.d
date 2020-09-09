@@ -35,13 +35,6 @@
 (setq display-line-numbers-type t)
 
 
-;; projectile will search for directories in these folders:
-;;(setq projectile-project-search-path '("~/Desktop/Pf"))
-
-;; Own keybindings
-(map! :ne "SPC l v" #'org-latex-preview)
-
-
 ;; AUCTeX config
 (add-hook 'LaTeX-mode-hook
           (lambda()
@@ -63,7 +56,7 @@
   (setq org-latex-default-packages-alist '(
     ("mathletters" "ucs" t ("pdflatex")) ;; added 
     ("T1" "fontenc" t ("pdflatex"))
-    ("utf8x" "inputenc" t ("pdflatex")) ;; modified to utf8x
+    ("utf8x" "inputenc" t ("pdflatex"))  ;; changed to utf8x
     ("" "graphicx" t)
     ("" "grffile" t)
     ("" "longtable" nil)
@@ -81,14 +74,9 @@
 
 (setq bibtex-completion-cite-prompt-for-optional-arguments nil)
 
-;; Ivy config, see https://github.com/tmalsburg/helm-bibtex
-;;(setq ivy-re-builders-alist
-;;      '((ivy-bibtex . ivy--regex-ignore-order)
-;;        (t . ivy--regex-plus)))
-
-;; Config opttions for bibtext completion via helm/ivy
+;; Config opttions for bibtext completion via helm
 (setq bibtex-completion-bibliography
-      '("/home/fynn/Desktop/Master/Bayesian_Glucose/LaTeX/bibliography/literature.bib"))
+      '("/home/fynn/Nextcloud/Docs/papers/literature.bib"))
 (setq bibtex-completion-library-path '("/home/fynn/Nextcloud/Docs/papers"))
 (setq bibtex-completion-notes-path "/home/fynn/Nextcloud/org/papers")
 (setq bibtex-completion-pdf-open-function
