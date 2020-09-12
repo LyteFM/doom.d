@@ -36,52 +36,53 @@
 
 
 ;; AUCTeX config
-(add-hook 'LaTeX-mode-hook
-          (lambda()
-	    (add-to-list 'TeX-command-list '("XeLaTeX" "xelatex --synctex=1 -interaction=nonstopmode %s" TeX-run-command t t :help "Run xelatex") t)
-	    (setq TeX-command-default "XeLaTeX")
-	   ;; (setq TeX-save-query nil)
-            (setq TeX-PDF-mode t)
-	    'turn-on-reftex
-	    (setq reftex-plug-into-AUCTeX t)
-	   ;; (setq TeX-show-compilation t)
-	    (setq TeX-parse-self t) ; Enable parse on load.
-	    (setq TeX-auto-save t) ; Enable parse on save.
-      ))
+;(add-hook 'LaTeX-mode-hook
+;          (lambda()
+;	    (add-to-list 'TeX-command-list '("XeLaTeX" "xelatex --synctex=1 -interaction=nonstopmode %s" TeX-run-command t t :help "Run xelatex") t)
+;	    (setq TeX-command-default "XeLaTeX")
+;	   ;; (setq TeX-save-query nil)
+;            (setq TeX-PDF-mode t)
+;	    'turn-on-reftex
+;	    (setq reftex-plug-into-AUCTeX t)
+;	   ;; (setq TeX-show-compilation t)
+;	    (setq TeX-parse-self t) ; Enable parse on load.
+;	    (setq TeX-auto-save t) ; Enable parse on save.
+;      ))
 
 ;; Org-mode config
+;(setq org-export-with-toc nil)
 
 ;; Override defaults to
-(with-eval-after-load 'ox-latex
-  (setq org-latex-default-packages-alist '(
-    ("mathletters" "ucs" t ("pdflatex")) ;; added 
-    ("T1" "fontenc" t ("pdflatex"))
-    ("utf8x" "inputenc" t ("pdflatex"))  ;; changed to utf8x
-    ("" "graphicx" t)
-    ("" "grffile" t)
-    ("" "longtable" nil)
-    ("" "wrapfig" nil)
-    ("" "rotating" nil)
-    ("normalem" "ulem" t)
-    ("" "amsmath" t)
-    ("" "textcomp" t)
-    ("" "amssymb" t)
-    ("" "capt-of" nil)
-    ("" "hyperref" nil))
-  )
-)
+;(with-eval-after-load 'ox-latex
+;  (setq org-latex-default-packages-alist '(
+;    ("mathletters" "ucs" t ("pdflatex")) ;; added 
+;    ("T1" "fontenc" t ("pdflatex"))
+;    ("utf8x" "inputenc" t ("pdflatex"))  ;; changed to utf8x
+;    ("" "graphicx" t)
+;    ("" "grffile" t)
+;    ("" "longtable" nil)
+;    ("" "wrapfig" nil)
+;    ("" "rotating" nil)
+;    ("normalem" "ulem" t)
+;    ("" "amsmath" t)
+;    ("" "textcomp" t)
+;    ("" "amssymb" t)
+;    ("" "capt-of" nil)
+;    ("" "hyperref" nil))
+;  )
+;)
 
 
-(setq bibtex-completion-cite-prompt-for-optional-arguments nil)
+;(setq bibtex-completion-cite-prompt-for-optional-arguments nil)
 
 ;; Config opttions for bibtext completion via helm
 (setq bibtex-completion-bibliography
-      '("/home/fynn/Nextcloud/Docs/papers/literature.bib"))
+      '("/home/fynn/Nextcloud/Docs/literature.bib"))
 (setq bibtex-completion-library-path '("/home/fynn/Nextcloud/Docs/papers"))
 (setq bibtex-completion-notes-path "/home/fynn/Nextcloud/org/papers")
-(setq bibtex-completion-pdf-open-function
-  (lambda (fpath)
-    (call-process "evince" nil 0 nil fpath)))
+;(setq bibtex-completion-pdf-open-function
+;  (lambda (fpath)
+;    (call-process "evince" nil 0 nil fpath)))
 
 
 ;; Here are some additional functions/macros that could help you configure Doom:
