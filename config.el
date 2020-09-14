@@ -50,6 +50,7 @@
       ))
 
 ;; Org-mode config
+(setq org-export-with-toc nil)
 
 ;; Override defaults to
 (with-eval-after-load 'ox-latex
