@@ -73,10 +73,16 @@
   )
 )
 
+;; PLANTUML
+(with-eval-after-load 'ob-plantuml
+    (setq org-plantuml-jar-path (expand-file-name "/usr/share/plantuml/plantuml.jar"))
+    (add-to-list 'org-src-lang-modes '("plantuml" . plantuml))
+    (org-babel-do-load-languages 'org-babel-load-languages '((plantuml . t)))
+)
 
 (setq bibtex-completion-cite-prompt-for-optional-arguments nil)
 
-;; Config opttions for bibtext completion via helm
+;; Config options for bibtext completion via helm
 (setq bibtex-completion-bibliography
       '("/home/fynn/Nextcloud/Docs/literature.bib"))
 (setq bibtex-completion-library-path '("/home/fynn/Nextcloud/Docs/papers"))
