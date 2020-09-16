@@ -32,7 +32,7 @@
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type t)
+(setq display-line-numbers-type 'nil) ;'relative)
 
 
 ;; AUCTeX config
@@ -47,6 +47,7 @@
 	   ;; (setq TeX-show-compilation t)
 	    (setq TeX-parse-self t) ; Enable parse on load.
 	    (setq TeX-auto-save t) ; Enable parse on save.
+	    (setq reftex-default-bibliography '("/home/fynn/Nextcloud/Docs/literature.bib")) ;; RefTeX autocomplete. ~\cite{%l}~ where l is the BibTex label is already default.
       ))
 
 ;; Org-mode config
@@ -77,9 +78,9 @@
 
 ;; Config opttions for bibtext completion via helm
 (setq bibtex-completion-bibliography
-      '("/home/fynn/Nextcloud/Docs/papers/literature.bib"))
+      '("/home/fynn/Nextcloud/Docs/literature.bib"))
 (setq bibtex-completion-library-path '("/home/fynn/Nextcloud/Docs/papers"))
-(setq bibtex-completion-notes-path "/home/fynn/Nextcloud/org/papers")
+(setq bibtex-completion-notes-path "/home/fynn/Nextcloud/Notes/papers")
 (setq bibtex-completion-pdf-open-function
   (lambda (fpath)
     (call-process "evince" nil 0 nil fpath)))
